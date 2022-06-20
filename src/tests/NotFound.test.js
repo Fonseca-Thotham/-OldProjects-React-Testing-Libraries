@@ -13,10 +13,9 @@ describe('Requisito 4', () => {
     expect(page).toBeInTheDocument();
   });
   it('Verifica se a página mostra a imagem', () => {
-    const havImg = screen.getByRole('img',
-      { src: 'https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif' });
-    expect(havImg).toHaveAttribute('src',
-      'https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif');
+    const havImg = screen.getByRole('img', { name: /Pikachu crying because the page/i });
+    const src = 'https://media.giphy.com/media/kNSeTs31XBZ3G/giphy.gif';
+    expect(havImg).toHaveAttribute('src', src);
     expect(havImg).toBeInTheDocument();
   });
 });
